@@ -1,0 +1,158 @@
+html {
+    background-color: white;
+}
+
+/* resetting margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: monospace, monospace;
+    font-size: 135%;
+    width: 960px;
+    margin: 0 auto;
+    border: 3px solid #da0505;
+    background-color: white;
+    border-radius: 10px 0 10px 0;
+    box-shadow: 4px 4px 3px 3px black
+}
+
+a.focus, a.hover {
+    font-style: italic;
+}
+
+/* the styles for the header */
+header {
+    border-bottom: 3px solid #da0505;
+    background-image: -moz-linear-gradient(25deg, #da0505 0%, #da0505 30%, white 50%, #da0505 80%, #8b0000 100%);
+    background-image: -webkit-linear-gradient(25deg, #da0505 0%, #da0505 30%, white 50%, #da0505 80%, #8b0000 100%);
+    background-image: -o-linear-gradient(25deg, #da0505 0%, #da0505 30%, white 50%, #da0505 80%, #8b0000 100%);
+    background-image: linear-gradient(25deg, #da0505 0%, #da0505 30%, white 50%, #da0505 80%, #8b0000 100%);
+}
+
+header h2 {
+    font-size: 175%;
+    text-indent: 20px;
+}
+header h3 {
+    font-size: 125%;
+    font-style: italic;
+    text-indent: 20px;
+    padding-bottom: 1em;
+}
+header img {
+    float: left;
+    height: 105px;
+    width: 150px;
+    border-radius: 10px 0 10px 0;
+    margin-left: 2px;
+}
+
+/* styles for main */
+main {
+    clear: left;
+}
+
+/* styles for section content */
+section {
+    padding: 0 15px;
+    float: right;
+    width: 650px;
+}
+section h2:first-child::first-letter {
+    font-size: 150%;
+    color: red;
+}
+section h3 {
+    font-size: 120%;
+    padding-bottom: .25em;
+}
+section p {
+    padding-bottom: 1em;
+}
+section img {
+    width: 200px;
+    padding: .5em .25em;
+    float: right;
+}
+section ul {
+    list-style-type: none;
+}
+
+/* styles for the aside */
+aside {
+    width: 200px;
+    float: left;
+    padding: 20px;
+    background-color: white;
+}
+aside ul {
+    list-style-type: none;
+    margin-left: .5em;
+    margin-bottom: .25em;
+}
+aside ul li {
+    width: 180px;
+    margin-bottom:.25em;
+    border: 2px solid #da0505;
+}
+aside ul li a {
+    display: block;
+    padding: .5em .5em .5em .5em;
+    text-decoration: none;
+    font-weight: bold;
+    color: #da0505;
+    background-color: black;
+}
+
+/* styles for menu bar*/
+#menu_bar ul {
+    list-style-type: none;
+    margin-left: 0;
+    margin-bottom: 1.25em;
+}
+#menu_bar ul li {
+    float: left;
+    width: auto;
+    border: 2px solid #da0505;
+}
+#menu_bar ul li a {
+    display: block;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+    text-align: center;
+}
+#menu_bar ul a:hover {
+    display: block;
+    font-style: italic;
+    color: #da0505;
+}
+#menu_bar ul a:focus {
+    background-color: silver;
+    color: red;
+}
+#menu_bar > ul::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+/* style settings for footer */
+footer {
+    background-color: #da0505;
+    border-top: 3px double #da0505;
+    border-radius: 10px 0 5px 0;
+    clear: both;
+}
+footer p {
+    font-size: 75%;
+    text-align: center;
+    color: white;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
