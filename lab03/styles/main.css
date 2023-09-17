@@ -110,12 +110,12 @@ aside ul li a {
 /* styles for menu bar*/
 #menu_bar ul {
     list-style-type: none;
-    margin-left: 0;
-    margin-bottom: 1.25em;
+    float: left;
+    width: 100%;
 }
 #menu_bar ul li {
-    float: left;
-    width: auto;
+    position: relative;
+    display: block;
     border: 2px solid #da0505;
 }
 #menu_bar ul li a {
