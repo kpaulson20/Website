@@ -11,7 +11,8 @@ html {
 body {
     font-family: monospace, monospace;
     font-size: 135%;
-    width: 960px;
+    width: 98%;
+    max-width: 960px;
     margin: 0 auto;
     border: 3px solid #da0505;
     background-color: white;
@@ -36,12 +37,14 @@ header h2 {
     font-size: 175%;
     text-indent: 20px;
 }
+
 header h3 {
     font-size: 125%;
     font-style: italic;
     text-indent: 20px;
     padding-bottom: 1em;
 }
+
 header img {
     float: left;
     height: 105px;
@@ -52,52 +55,72 @@ header img {
 
 /* styles for main */
 main {
-    clear: left;
+    display: flex;
 }
 
 /* styles for section content */
 section {
-    padding: 0 15px;
-    float: right;
-    width: 650px;
+    padding: 0 1.5%;
+    flex-basis: 80%;
+    order: 2;
 }
+
 section h2:first-child::first-letter {
     font-size: 150%;
     color: red;
 }
+
 section h3 {
     font-size: 120%;
     padding-bottom: .25em;
 }
+
 section p {
     padding-bottom: 1em;
 }
-section img {
-    width: 200px;
-    padding: .5em .25em;
-    float: right;
-}
+
 section ul {
     list-style-type: none;
 }
 
+section img {
+    width: 200px;
+    padding: .5em;
+    float: right;
+}
+
+section figure {
+    float: left;
+    padding: 1em 1em 1em 1em;
+}
+
+section figcaption {
+    display: block;
+    font-weight: bold;
+    padding-top: .5em;
+    border-bottom: 1px solid black;
+}
+
 /* styles for the aside */
 aside {
-    width: 200px;
-    float: left;
-    padding: 20px;
+    flex-basis: 20%;
+    order: 1;
+    padding: 2%;
     background-color: white;
 }
+
 aside ul {
     list-style-type: none;
     margin-left: .5em;
     margin-bottom: .25em;
 }
+
 aside ul li {
-    width: 180px;
-    margin-bottom:.25em;
+    width: 98%;
+    margin-bottom: .25em;
     border: 2px solid #da0505;
 }
+
 aside ul li a {
     display: block;
     padding: .5em .5em .5em .5em;
@@ -110,16 +133,19 @@ aside ul li a {
 /* styles for menu bar*/
 #menu_bar ul {
     list-style-type: none;
-    float: left;
-    width: 100%;
     display: flex;
+    flex-basis: 100%;
+    justify-content: space-between;
+    width: 100%;
 }
+
 #menu_bar ul li {
     position: relative;
     display: block;
     border: 2px solid #da0505;
-    width: 25%;
+    flex-basis: 25%;
 }
+
 #menu_bar ul li a {
     display: block;
     padding-top: .5em;
@@ -129,15 +155,22 @@ aside ul li a {
     font-weight: bolder;
     text-align: center;
 }
+
 #menu_bar ul a:hover {
     display: block;
     font-style: italic;
     color: #da0505;
 }
+
 #menu_bar ul a:focus {
     background-color: silver;
     color: red;
 }
+
+#menu_bar ul a.current {
+    background-color: silver;
+}
+
 #menu_bar > ul::after {
     content: "";
     clear: both;
@@ -151,6 +184,7 @@ footer {
     border-radius: 10px 0 5px 0;
     clear: both;
 }
+
 footer p {
     font-size: 75%;
     text-align: center;
@@ -158,3 +192,60 @@ footer p {
     padding-top: 1em;
     padding-bottom: 1em;
 }
+
+/* hide mobile menu*/
+#mobile_menu {
+    display: none;
+}
+
+/* mobile landscape to tablet portrait */
+@media only screen and (max-width: 767px) {
+    header img {
+        float: none;
+    }
+
+    header {
+        text-align: center;
+    }
+
+    main {
+        flex-direction: column;
+    }
+
+    section {
+        order: 1;
+        width: 95%;
+    }
+
+    section img {
+        max-width: 30%;
+    }
+
+    aside {
+        order: 2;
+        width: 95%;
+        margin: 0 auto;
+        text-align: center;
+        padding-right: 2.5%;
+    }
+
+    #menu_bar {
+        display: none;
+    }
+
+    #mobile_menu {
+        display: block;
+    }
+
+    .slicknav_menu {
+        background-color: #000000 !important;
+    }
+}
+
+/* mobile portrait to mobile landscape */
+@media only screen and (max-width: 479px) {
+    body {
+        font-size: 85%;
+    }
+}
+
