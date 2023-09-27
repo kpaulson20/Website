@@ -27,10 +27,10 @@ a.focus, a.hover {
 /* the styles for the header */
 header {
     border-bottom: 2px solid #da0505;
-    background-image: -moz-linear-gradient(25deg, black 0%, white 30%, black 50%, white 80%, black 100%);
-    background-image: -webkit-linear-gradient(25deg, black 0%, white 30%, black 50%, white 80%, black 100%);
-    background-image: -o-linear-gradient(25deg, black 0%, white 30%, black 50%, white 80%, black 100%);
-    background-image: linear-gradient(25deg, black 0%, white 30%, black 50%, white 80%, black 100%);
+    background-image: -moz-linear-gradient(25deg, black 0%, black 30%, white 50%, black 80%, black 100%);
+    background-image: -webkit-linear-gradient(25deg, black 0%, black 30%, white 50%, black 80%, black 100%);
+    background-image: -o-linear-gradient(25deg, black 0%, black 30%, white 50%, black 80%, black 100%);
+    background-image: linear-gradient(25deg, black 0%, black 30%, white 50%, black 80%, black 100%);
     color: #b90404;
 }
 
@@ -48,10 +48,10 @@ header h3 {
 
 header img {
     float: left;
-    height: 105px;
+    height: 103px;
     width: 150px;
     border-radius: 0 0 10px 0;
-    margin-left: 0;
+    margin-left: .25em;
 }
 
 /* styles for main */
@@ -86,8 +86,9 @@ section ul {
 
 section img {
     width: 200px;
-    float: left;
-    border: 1px solid #da0505;
+    float: right;
+    margin-top: 0;
+    margin-right: .5em;
 }
 
 section figure {
@@ -101,6 +102,11 @@ section figcaption {
     display: block;
     font-weight: bold;
     text-align: center;
+}
+section figure img {
+    width: 200px;
+    float: left;
+    border: 1px solid #da0505;
 }
 
 /* styles for the aside */
@@ -217,10 +223,6 @@ footer p {
     section {
         order: 1;
         width: 95%;
-    }
-
-    section img {
-        max-width: 30%;
     }
 
     aside {
