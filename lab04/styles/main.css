@@ -16,7 +16,7 @@ body {
     margin: 0 auto;
     border: 3px solid #da0505;
     background-color: white;
-    border-radius: 10px 0 10px 0;
+    border-radius: 0 0 10px 0;
     box-shadow: 4px 4px 3px 3px black
 }
 
@@ -26,11 +26,12 @@ a.focus, a.hover {
 
 /* the styles for the header */
 header {
-    border-bottom: 3px solid #da0505;
-    background-image: -moz-linear-gradient(25deg, #da0505 0%, #da0505 30%, white 50%, #da0505 80%, #8b0000 100%);
-    background-image: -webkit-linear-gradient(25deg, #da0505 0%, #da0505 30%, white 50%, #da0505 80%, #8b0000 100%);
-    background-image: -o-linear-gradient(25deg, #da0505 0%, #da0505 30%, white 50%, #da0505 80%, #8b0000 100%);
-    background-image: linear-gradient(25deg, #da0505 0%, #da0505 30%, white 50%, #da0505 80%, #8b0000 100%);
+    border-bottom: 2px solid #da0505;
+    background-image: -moz-linear-gradient(25deg, black 0%, white 30%, black 50%, white 80%, black 100%);
+    background-image: -webkit-linear-gradient(25deg, black 0%, white 30%, black 50%, white 80%, black 100%);
+    background-image: -o-linear-gradient(25deg, black 0%, white 30%, black 50%, white 80%, black 100%);
+    background-image: linear-gradient(25deg, black 0%, white 30%, black 50%, white 80%, black 100%);
+    color: #b90404;
 }
 
 header h2 {
@@ -49,8 +50,8 @@ header img {
     float: left;
     height: 105px;
     width: 150px;
-    border-radius: 10px 0 10px 0;
-    margin-left: 2px;
+    border-radius: 0 0 10px 0;
+    margin-left: 0;
 }
 
 /* styles for main */
@@ -85,20 +86,21 @@ section ul {
 
 section img {
     width: 200px;
-    padding: .5em;
-    float: right;
+    float: left;
+    border: 1px solid #da0505;
 }
 
 section figure {
     float: left;
-    padding: 1em 1em 1em 1em;
+    margin-left: 0;
+    margin-top: .25em;
+    margin-right: 1em;
 }
 
 section figcaption {
     display: block;
     font-weight: bold;
-    padding-top: .5em;
-    border-bottom: 1px solid black;
+    text-align: center;
 }
 
 /* styles for the aside */
