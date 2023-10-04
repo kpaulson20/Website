@@ -65,41 +65,50 @@ section {
     flex-basis: 80%;
     order: 2;
 }
+
 section h2:first-child::first-letter {
     font-size: 150%;
     color: #cc0000;
 }
+
 section h3 {
     font-size: 120%;
     padding-bottom: .25em;
 }
+
 section p {
     padding-bottom: 1em;
 }
+
 section ul {
     list-style-type: none;
 }
+
 section ul a:hover {
     font-style: italic;
     color: #da0505;
 }
+
 section img {
     width: 200px;
     float: right;
     margin-top: 0;
     margin-right: .5em;
 }
+
 section figure {
     float: left;
     margin-left: 0;
     margin-top: .25em;
     margin-right: 1em;
 }
+
 section figcaption {
     display: block;
     font-weight: bold;
     text-align: center;
 }
+
 section figure img {
     width: 200px;
     float: left;
@@ -111,36 +120,45 @@ figure, figcaption {
     margin: 0;
     padding: 0;
 }
-figure{
+
+figure {
     width: auto;
 }
+
 figcaption {
     font-size: 150%;
     font-weight: bold;
     text-align: center;
     width: auto;
 }
+
 table {
     border-collapse: collapse;
 }
+
 thead {
     text-align: center;
     background-color: silver;
     width: auto;
 }
+
 tr {
     width: auto;
 }
+
 td {
     padding: .2em .6em;
     text-align: left;
 }
+
 thead, td {
     padding: .2em .6em;
 }
+
 td:nth-last-child(1) {
     text-align: right;
 }
+
 th[scope="row"] {
     text-align: right;
 }
@@ -148,38 +166,41 @@ th[scope="row"] {
 /* styles for learnmore page*/
 fieldset {
     margin-bottom: .5em;
-    padding:.5em .25em;
+    padding: .5em .25em;
 }
-legend {
-    font-weight: bold;
-    font-size: 85%;
-    padding-bottom: .5em;
-}
-label, input, select {
+
+label, input {
     font-size: 95%;
 }
+
 label {
     float: left;
     width: 9em;
     text-align: right;
 }
-input, select {
+
+input {
     width: 10em;
     margin-left: .5em;
     margin-bottom: .5em;
 }
+
 input:required, input[required], input:invalid {
     border: 2px solid #d00404;
 }
+
 input:valid {
     border: 2px solid green;
 }
+
 input:invalid {
     box-shadow: none;
 }
+
 br {
     clear: both;
 }
+
 #button input {
     width: 8em;
     background-color: silver;
@@ -199,6 +220,7 @@ aside ul {
     margin-left: .5em;
     margin-bottom: .25em;
 }
+
 aside ul a:hover {
     display: block;
     font-style: italic;
