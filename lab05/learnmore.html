@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Paulson Lab 5 Learn More</title>
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/slicknav.css">
+    <script src="https://code.jQuery.com/jQuery-3.2.1.min.js"></script>
+    <script src="js/jquery.slicknav.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#menu_bar").slicknav({prependTo: "#mobile_menu"});
+        });
+    </script>
+</head>
+<body>
+<header>
+    <img src="../lab04/images/img_1.png" alt="Music Notes">
+    <h2>Music</h2>
+    <h3>The evolution of music over the years</h3>
+</header>
+<nav id="mobile_menu"></nav>
+<nav id="menu_bar">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="culture.html">Culture</a></li>
+        <li><a href="instruments.html">Instruments</a></li>
+        <li><a href="learnmore.html" class ="current">Learn More</a></li>
+    </ul>
+</nav>
+<main>
+    <section>
+        <h2>Contact Kynedi</h2>
+        <p>Have questions? Fill out the information below:</p>
+        <form action="confirm.html" method="get"
+              name="confirm_form" id="confirm_form">
+            <fieldset>
+                <label for="first_name">First Name:</label>
+                <input type="text" name="first_name" id="first_name" required><br>
+                <label for="last_name">Last Name:</label>
+                <input type="text" name="last_name" id="last_name" required><br>
+                <label for="message">Message:</label>
+                <input type="text" name="message" id="message" required><br>
+                <label for="email">Email:</label>
+                <input type="text" name="email" id="email" required><br>
+                <label for="phone">Phone:</label>
+                <input type="tel" name="phone" id="phone" required placeholder="999-999-9999"
+                       pattern="\d{3}[\-]\d{3}[\-]\d{4}" title="Must follow 999-999-9999">
+            </fieldset>
+            <fieldset id="button">
+                <legend> </legend>
+                <label>&nbsp;</label>
+                <input type="submit" id="submit" value="Send Email">
+            </fieldset>
+    </section>
+    <aside>
+        <ul>
+            <li><a href=https://www.contemporary-african-art.com/african-musical-instruments.html>Africa </a></li>
+            <li><a href=https://nique.net/entertainment/2013/03/28/music-of-antarctica>Antarctica </a></li>
+            <li><a href=https://www.secret-retreats.com/blog/general-info/musical-instruments-of-asia.html>Asia </a>
+            </li>
+            <li><a href=https://hellomusictheory.com/learn/australian-instruments/>Australia </a></li>
+            <li><a href=https://europeisnotdead.com/european-musical-instruments/>Europe </a></li>
+            <li><a href=https://instrumentful.com/musical-instruments-and-styles-from-north-america/>North
+                America </a></li>
+            <li><a href=https://brightstarmusical.com/the-many-instruments-of-latin-american-music/>South
+                America </a></li>
+        </ul>
+    </aside>
+</main>
+
+<footer>
+    <p>&copy; 2023 Kynedi Paulson</p>
+</footer>
+</body>
+</html>
