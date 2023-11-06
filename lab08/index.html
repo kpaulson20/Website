@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Paulson Lab 8 Reservation Form</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+<main>
+    <form id="reservation-form" action="confirmation.html" method="get" class="col-sm-6 mx-auto text-center border border-secondary">
+        <h1 class="h3">Reservation Request</h1>
+        <hr>
+        <div class="form-group row">
+            <label for="arrival-date" class="col-form-label col-sm-4">Arrival Date:</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="arrival-date" name="arrival-date" autofocus>
+                <small class="text-danger font-weight-bold"></small>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="nights" class="col-form-label col-sm-4">Nights:</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="nights" name="nights">
+                <small class="text-danger font-weight-bold"></small>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="adults" class="col-form-label col-sm-4">Adults:</label>
+            <div class="col-sm-1" style="min-width: 6em;">
+                <select id="adults" name="adults" class="custom-select">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="children" class="col-form-label col-sm-4">Children:</label>
+            <div class="col-sm-1" style="min-width: 6em;">
+                <select id="children" name="children" class="custom-select">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="name" class="col-form-label col-sm-4">Name:</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="name" name="name">
+                <small class="text-danger font-weight-bold"></small>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="email" class="col-form-label col-sm-4">Email:</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="email" name="email">
+                <small class="text-danger font-weight-bold"></small>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="phone-number" class="col-form-label col-sm-4">Phone:</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="phone-number" name="phone-number" placeholder="999-999-9999">
+                <small class="text-danger font-weight-bold"></small>
+            </div>
+        </div>
+        <div class="form-group row">
+            <span class="col-sm-4">Contact method:</span>
+            <div class="form-group col-sm-8 text-left">
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" value="voice" id="voice" name="contact-method">
+                    <label class="form-check-label" for="voice">Voice call</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" value="text-message" id="text-message" name="contact-method">
+                    <label class="form-check-label" for="text-message">Text message</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" value="email-message" id="email-message" name="contact-method">
+                    <label class="form-check-label" for="email-message">Email message</label>
+                </div>
+                <small class="text-danger font-weight-bold" id="contact-message"></small>
+            </div>
+        </div>
+        <div class="mx-auto w-50 mt-3">
+            <div class="form-group">
+                <input type="submit" class="btn btn-secondary w-100 mb-1" id="make-reservation" value="Complete Reservation">
+                <br>
+                <input type="reset" class="btn btn-secondary w-100" id="reset-reservation-form" value="Reset">
+            </div>
+        </div>
+    </form>
+</main>
+<script src="jquery-3.6.0.min.js"></script>
+<script src="validate.js"></script>
+</body>
+</html>
