@@ -84,7 +84,7 @@ $(document).ready ( () => {
        }
 
        //validate that one of the contact methods is selected
-       let selectedOption = $(':radio:');
+       let selectedOption = $(':radio:checked');
        if (selectedOption.length === 0) {
            $(':radio').addClass('is-valid');
            $('#radio-message').text('Please select one option');
