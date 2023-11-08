@@ -2,16 +2,17 @@
 const datePattern = /^(?:(?:(?:0[1-9]|1[0-2])\/(?:0[1-9]|1\d|2[0-8])|(?:0[13-9]|1[0-2])\/(?:29|30)|(?:0[13578]|1[02])\/31)\/(?:18|19|20)\d\d|02\/29\/(?:(?:18|19|20)(?:04|08|[2468][048]|[13579][26])|2000))$/;
 const emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
 const phonePattern = /^\d{3}-\d{3}-\d{4}$/;
+const nightsPattern = /^[1-30]$/;
 
 $(document).ready ( () => {
    //set values equal to elements on the form based on ID values
    const txtArrivalDate = $('#arrival-date');
    const txtNights = $('#nights');
-   const txtAdults = $('#adults');
-   const txtChildren = $('#children');
+   //const txtAdults = $('#adults');
+   //const txtChildren = $('#children');
    const txtName = $('#name');
    const txtEmail = $('#email');
-   const txtPhone = $('#phone');
+   const txtPhone = $('#phone-number');
 
    //boolean to track validity of entries
    let isValid;
@@ -54,10 +55,10 @@ $(document).ready ( () => {
        //validate number of nights
        if (nights === '') {
            makeInvalid(txtNights, 'Number of nights is required.');
-       } else if (0 > nights >= 30) {
-           makeInvalid(txtNights, 'The number of nights must be between 0 and 30.');
-       } else if (nights === '[A-Z a-z]') {
+       } else if (nightsPattern.test(nights) === false) {
            makeInvalid(txtNights, 'Nights must be numeric.');
+       } else if (nightsPattern.test(nights) === false && 0 > nights >= 30) {
+           makeInvalid(txtNights, 'The number of nights must be between 0 and 30.');
        } else {
            makeValid(txtNights);
        }
@@ -84,14 +85,14 @@ $(document).ready ( () => {
        }
 
        //validate that one of the contact methods is selected
-       let contactMethod = $(':radio:selected');
+       let contactMethod = $(':radio:checked');
        if (contactMethod.length === 0) {
            $(':radio').addClass('is-invalid');
-           $('#radio-message').text('Please select one option');
+           $('#contact-message').text('Please select one option');
            isValid = false;
        } else {
            $(':radio').removeClass('is-invalid');
-           $('#radio-message').text('');
+           $('#contact-message').text('');
        }
 
        //prevent default action of submission if any entries are left blank
