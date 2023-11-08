@@ -7,8 +7,8 @@ $(document).ready ( () => {
    //set values equal to elements on the form based on ID values
    const txtArrivalDate = $('#arrival-date');
    const txtNights = $('#nights');
-   //const txtAdults = $('#adults');
-   //const txtChildren = $('#children');
+   const txtAdults = $('#adults');
+   const txtChildren = $('#children');
    const txtName = $('#name');
    const txtEmail = $('#email');
    const txtPhone = $('#phone');
@@ -30,22 +30,22 @@ $(document).ready ( () => {
        textbox.removeClass('is-invalid');
    }
    //handle click event of the Complete Reservation button
-   $('#complete-reservation').on('click', (evt) => {
+   $('#make-reservation').on('click', (evt) => {
        //set inValid variable to true
        isValid = true;
        //set values equal to the contents of the input elements
-       const arrivalDate = txtArrivalDate.val().trim();
-       const nights = txtNights.val().trim();
-       const name = txtName.val().trim();
-       const email = txtEmail.val().trim();
-       const phone = txtPhone.val().trim();
+       const arrivalDate = txtArrivalDate.val() ? txtArrivalDate.val().trim(): ''
+       const nights = txtNights.val() ? txtName.val().trim(): ''
+       const name = txtName.val() ? txtName.val().trim() : ''
+       const email = txtEmail.val() ? txtEmail.val().trim() : ''
+       const phone = txtPhone.val() ? txtPhone.val().trim() : ''
 
        //validate arrival date for a future date and in the correct format
        if (arrivalDate === '') {
            makeInvalid(txtArrivalDate, 'Arrival Date is required.');
        } else if (Date.parse($('#arrival-date').val().trim()) <= Date.now()) {
            makeInvalid(txtArrivalDate, 'Invalid date. Must be future date.');
-       } else if (datePattern.text(arrivalDate) === false) {
+       } else if (datePattern.test(arrivalDate) === false) {
            makeInvalid(txtArrivalDate, 'Must be in the format mm/dd/yyyy.');
        } else {
            makeValid(txtArrivalDate);
@@ -54,9 +54,9 @@ $(document).ready ( () => {
        //validate number of nights
        if (nights === '') {
            makeInvalid(txtNights, 'Number of nights is required.');
-       } else if (0 < nights <= 30) {
+       } else if (0 > nights >= 30) {
            makeInvalid(txtNights, 'The number of nights must be between 0 and 30.');
-       } else if (nights === '[A-Za-z]') {
+       } else if (nights === '[A-Z a-z]') {
            makeInvalid(txtNights, 'Nights must be numeric.');
        } else {
            makeValid(txtNights);
@@ -84,8 +84,8 @@ $(document).ready ( () => {
        }
 
        //validate that one of the contact methods is selected
-       let selectedOption = $(':radio:checked');
-       if (selectedOption.length === 0) {
+       let contactMethod = $(':radio:selected');
+       if (contactMethod.length === 0) {
            $(':radio').addClass('is-invalid');
            $('#radio-message').text('Please select one option');
            isValid = false;
@@ -97,7 +97,7 @@ $(document).ready ( () => {
        //prevent default action of submission if any entries are left blank
        if (isValid === false) {
            evt.preventDefault();
-           txtName.select().focus();
+           txtArrivalDate.select().focus();
        }
    });
    //code for reset form
