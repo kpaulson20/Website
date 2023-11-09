@@ -2,7 +2,7 @@
 const datePattern = /^(?:(?:(?:0[1-9]|1[0-2])\/(?:0[1-9]|1\d|2[0-8])|(?:0[13-9]|1[0-2])\/(?:29|30)|(?:0[13578]|1[02])\/31)\/(?:18|19|20)\d\d|02\/29\/(?:(?:18|19|20)(?:04|08|[2468][048]|[13579][26])|2000))$/;
 const emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
 const phonePattern = /^\d{3}-\d{3}-\d{4}$/;
-const nightsPattern = /^[1-30]$/;
+const nightsPattern = /^[0-9]+$/;
 
 $(document).ready ( () => {
    //set values equal to elements on the form based on ID values
@@ -36,7 +36,7 @@ $(document).ready ( () => {
        isValid = true;
        //set values equal to the contents of the input elements
        const arrivalDate = txtArrivalDate.val() ? txtArrivalDate.val().trim(): ''
-       const nights = txtNights.val() ? txtName.val().trim(): ''
+       const nights = txtNights.val() ? txtNights.val().trim(): ''
        const name = txtName.val() ? txtName.val().trim() : ''
        const email = txtEmail.val() ? txtEmail.val().trim() : ''
        const phone = txtPhone.val() ? txtPhone.val().trim() : ''
@@ -57,7 +57,7 @@ $(document).ready ( () => {
            makeInvalid(txtNights, 'Number of nights is required.');
        } else if (nightsPattern.test(nights) === false) {
            makeInvalid(txtNights, 'Nights must be numeric.');
-       } else if (nightsPattern.test(nights) === false && 0 > nights >= 30) {
+       } else if (nights < 0 || nights > 30) {
            makeInvalid(txtNights, 'The number of nights must be between 0 and 30.');
        } else {
            makeValid(txtNights);
@@ -112,7 +112,7 @@ $(document).ready ( () => {
        //remove all validation messages
        $('small').text('');
        //send focus to the top textbox
-       txtArrivalDate.focus();
+       txtArrivalDate.select().focus();
    })
 
 });
