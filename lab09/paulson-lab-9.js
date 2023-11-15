@@ -2,7 +2,7 @@
 const emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.edu$/;
 const birthDatePattern = /^((0[13578]|1[02])\/31\/(18|19|20)[0-9]{2})|((01|0[3-9]|1[0-2])\/(29|30)\/(18|19|20)[0-9]{2})|((0[1-9]|1[0-2])\/(0[1-9]|1[0-9]|2[0-8])\/(18|19|20)[0-9]{2})|((02)\/29\/(((18|19|20)(04|08|[2468][048]|[13579][26]))|2000))$/;
 const phonePattern = /^\(\d{3}\)\d{3}.\d{4}$/;
-const zipPattern = /^\d{5}(-\d{5})?$/;
+const zipPattern = /^\d{5}(-\d{4})$/;
 
 $(document).ready(() => {
     // setting values equal to elements on the form based on id
