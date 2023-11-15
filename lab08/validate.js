@@ -102,7 +102,7 @@ $(document).ready ( () => {
        }
    });
    //code for reset form
-   $('#reset-form').on('click', () => {
+   $('#reset-reservation-form').on('click', () => {
        //clear all textboxes
        $('#input[type="text"]').val('');
        //deselect contact method

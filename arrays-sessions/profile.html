@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Saved Account Profile</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+<main class="col-sm-4 mx-auto border border-secondary">
+    <h1 class="h3 text-center">Saved Account Profile Information</h1>
+    <hr>
+    <script>
+        const strings = sessionStorage.profile.split('|');
+        //remove last item  to prevent undefined empty field
+        strings.pop();
+        //loop through each array element
+        for (let i in strings) {
+            //split values vase on = sign
+            let elements = strings[i].split('=');
+            //replace hyphens with spaces in field names
+            let field = elements[0].replaceAll('-', ' ');
+            let value = elements[1];
+            //capitalize field names and add colons to data terms
+            document.write(`<dt style="text-transform: capitalize">${field}:</dt>`);
+            document.write(`<dd>${value}</dd>`);
+        }
+        document.write(`</dl>`)
+    </script>
+</main>
+</body>
+</html>

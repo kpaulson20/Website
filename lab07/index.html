@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Paulson Lab 7</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+    <main class="col-lg-6 mx-auto text-center border">
+        <h1>Temperature Conversion</h1>
+        <hr>
+        <div class="custom-control custom-radio">
+            <input type="radio" name="temp-conversion" id="to-celsius" value="convert-to-celsius"
+                   class="custom-control-input" checked>
+            <label for="to-celsius" class="custom-control-label">Fahrenheit to Celsius</label>
+        </div>
+        <div class="custom-control custom-radio">
+            <input type="radio" name="temp-conversion" id="to-fahrenheit" value="convert-to-fahrenheit"
+                   class="custom-control-input">
+            <label for="to-fahrenheit" class="custom-control-label">Celsius to Fahrenheit</label>
+        </div>
+        <div class="mx-auto w-50 mt-3">
+            <div class="form-group">
+                <label id="temp-top-label" for="temp-entered">Enter temperature in Celsius:</label>
+                <input type="text" name="temp-entered" id="temp-entered"
+                       class="form-control text-center">
+                <small id="validation-message" class="text-danger font-weight-bold"></small>
+            </div>
+            <div>
+                <label id="temp-bottom-label" for="converted-temp">Temperature in Fahrenheit:</label>
+                <input type="text" name="converted-temp" id="converted-temp"
+                       class="form-control text-center" disabled>
+            </div>
+            <div class="form-group">
+                <input type="button" class="btn btn-secondary w-100 mb-1" id="convert" value="Convert Temperature">
+                <br>
+                <input type="button" class="btn btn-secondary w-100" id="clear-entries" value="Clear">
+            </div>
+        </div>
+    </main>
+<script src="Paulson-lab-7.js"></script>
+</body>
+</html>

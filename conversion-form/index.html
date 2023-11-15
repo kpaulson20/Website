@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Distance Conversion Form</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+<main class="col-lg-6 mx-auto text-center border border-secondary">
+    <h1>Convert Distances</h1>
+    <hr>
+    <div class="custom-control custom-radio">
+        <input type="radio" name="distance-conversion" id="to-miles" value="convert-to-miles"
+               class="custom-control-input" checked>
+        <label for="to-miles" class="custom-control-label">Kilometers to Miles</label>
+    </div>
+    <div class="custom-control custom-radio">
+        <input type="radio" name="distance-conversion" id="to-kilometers" value="convert-to-kilometers"
+               class="custom-control-input">
+        <label for="to-kilometers" class="custom-control-label">Miles to Kilometers</label>
+    </div>
+    <div class="mx-auto w-50 mt-3">
+        <div class="form-group">
+            <label id="distance-top-label" for="distance-entered">Enter distance in kilometers:</label>
+            <input type="text" name="distance-entered" id="distance-entered"
+                   class="form-control text-center">
+            <small id="validation-message" class="text-danger font-weight-bold"></small>
+        </div>
+        <div>
+            <label id="distance-bottom-label" for="converted-distance">Distance converted to miles:</label>
+            <input type="text" name="converted-distance" id="converted-distance"
+                   class="form-control text-center" disabled>
+        </div>
+        <div class="form-group">
+            <input type="button" class="btn btn-secondary w-100 mb-1" id="convert" value="Convert Distance">
+            <br>
+            <input type="button" class="btn btn-secondary w-100" id="clear-entries" value="Clear">
+        </div>
+    </div>
+</main>
+<script src="distance-conversion.js"></script>
+</body>
+</html>

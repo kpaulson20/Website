@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kilometers to Miles Conversion</title>
+</head>
+<body>
+<h1>Convert Kilometers to Miles</h1>
+<script>
+    //get the number of kilometers from the user...limit entries to numbers 1 to 1000
+    let kilometers = 0;
+    let miles = 0;
+    do {
+        kilometers = prompt("Enter distance in kilometers: ");
+        if (isNaN(kilometers) || kilometers < 1 || kilometers > 1000 || kilometers === '') {
+            //display an alert on two lines if input does not meet all conditions
+            alert(`You entered: ${kilometers}\nPlease enter a distance between 1 and 1000`);
+        }
+        else {
+            miles = parseFloat(kilometers) * 0.6214;
+        }
+    } while (isNaN(kilometers) || kilometers < 1 || kilometers > 1000 || kilometers === '');
+    document.write(`<p>Distance in kilometers: ${kilometers} km</p>`);
+    document.write(`<p>Converted to miles: ${miles.toFixed(1)} mi</p>`);
+</script>
+</body>
+</html>

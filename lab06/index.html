@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Paulson Lab 6</title>
+</head>
+<body>
+<h1>Fahrenheit to Celsius Conversion</h1>
+<script>
+    let fahrenheit = 0;
+    let celsius = 0;
+    do {
+        fahrenheit = prompt("Enter the temperature in fahrenheit: ");
+        if (isNaN(fahrenheit) || fahrenheit < -100 || fahrenheit > 212 || fahrenheit === '') {
+            //display an alert on two lines if input does not meet all conditions
+            alert(`You entered: ${fahrenheit}\nPlease enter a temperature between -100 and 212`);
+        }
+        else {
+            celsius = parseFloat(fahrenheit - 32) * 5/9;
+        }
+    } while (isNaN(fahrenheit) || fahrenheit < -100 || fahrenheit > 212 || fahrenheit === '');
+    document.write(`<p>Fahrenheit Temperature: ${fahrenheit}</p>`);
+    document.write(`<p>Converted Celsius Temperature: ${celsius.toFixed(1)}</p>`);
+</script>
+</body>
+</html>
