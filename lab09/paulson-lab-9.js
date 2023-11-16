@@ -36,7 +36,7 @@ $(document).ready(() => {
     txtName.focus();
 
     //handle click event to validate information
-    $('#validate-info').on('click', (evt) => {
+    $('#validate').on('click', (evt) => {
        //set isValid boolean to true
        isValid = true;
 
@@ -50,7 +50,7 @@ $(document).ready(() => {
        const state = txtState.val() ? txtState.val().trim() : ''
 
        //validating formats of all input
-        (!name || name.length < 2 || name ==='')
+        (!name || name ==='' || name.length < 2) ?
            makeInvalid(txtName, 'Please enter First and Last name\n' +
            'No numbers or special characters except hyphen (-)') :
            makeValid(txtName);
@@ -82,6 +82,7 @@ $(document).ready(() => {
        } else {
            makeValid(txtDateOfBirth);
        }
+        $('#results').text(isValid ? 'All fields contain valid entries.' : '');
 
        txtName.select().focus();
     });
