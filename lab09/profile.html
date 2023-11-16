@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Paulson Lab 9 - Saved Profile</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+<main class="col-sm-6 mx-auto border border-secondary mt-3">
+    <h1 class="h3 text-center">My Account Profile</h1>
+    <hr>
+    <script>
+        const strings = sessionStorage.lab9info.split('|');
+        //remove last item  to prevent undefined empty field
+        strings.pop();
+        for (let i in strings) {
+            //slit values on = sign
+            let elements = strings[i].split('=');
+            //replace hyphens with spaces
+            let field = elements[0].replaceAll('-', ' ');
+            let value = elements[1];
+            //capitalize names and add colons to data
+            document.write(`<dt style="text-transform: capitalize">${field}:</dt>`);
+            document.write(`<dd>${value}</dd>`);
+        }
+        document.write(`</dl>`)
+    </script>
+</main>
+</body>
+</html>
