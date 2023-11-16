@@ -1,6 +1,6 @@
 "use strict"
 const emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.edu$/;
-const birthDatePattern = /^((0[13578]|1[02])\/31\/(18|19|20)[0-9]{2})|((01|0[3-9]|1[0-2])\/(29|30)\/(18|19|20)[0-9]{2})|((0[1-9]|1[0-2])\/(0[1-9]|1[0-9]|2[0-8])\/(18|19|20)[0-9]{2})|((02)\/29\/(((18|19|20)(04|08|[2468][048]|[13579][26]))|2000))$/;
+const datePattern = /^((0[13578]|1[02])\/31\/(18|19|20)[0-9]{2})|((01|0[3-9]|1[0-2])\/(29|30)\/(18|19|20)[0-9]{2})|((0[1-9]|1[0-2])\/(0[1-9]|1[0-9]|2[0-8])\/(18|19|20)[0-9]{2})|((02)\/29\/(((18|19|20)(04|08|[2468][048]|[13579][26]))|2000))$/;
 const phonePattern = /^\(\d{3}\)\d{3}.\d{4}$/;
 const zipPattern = /^\d{5}(-\d{4})$/;
 
@@ -11,6 +11,8 @@ $(document).ready(() => {
     const txtPhone = $('#phone');
     const txtDateOfBirth = $('#date-of-birth');
     const txtZip = $('#zip-code');
+    const txtCity = $('#city');
+    const txtState = $('#state');
 
     //setting a boolean to track validity of entries
     let isValid;
@@ -30,27 +32,28 @@ $(document).ready(() => {
         //remove the is-invalid class
         textbox.removeClass('is-invalid');
     }
-
     //focus on top textbox
     txtName.focus();
 
     //handle click event to validate information
-    $('#validation').on('click', (evt) => {
+    $('#validate-info').on('click', (evt) => {
        //set isValid boolean to true
        isValid = true;
 
        //setting values and contents of elements equal
-       const name = txtName.val().trim();
-       const emailAddress = txtEmail.val().trim();
-       const phone = txtPhone.val().trim();
-       const DoB = txtDateOfBirth.val().trim;
-       const zip = txtZip.val().trim();
+       const name = txtName.val() ? txtName.val().trim() : ''
+       const emailAddress = txtEmail.val() ? txtEmail.val().trim() : ''
+       const phone = txtPhone.val() ? txtPhone.val().trim() : ''
+       const dateOfBirth =  txtDateOfBirth.val() ? txtDateOfBirth.val().trim : ''
+       const zip = txtZip.val() ? txtZip.val().trim() : ''
+       const city = txtCity.val() ? txtCity.val().trim() : ''
+       const state = txtState.val() ? txtState.val().trim() : ''
 
        //validating formats of all input
-       name.test('') ?
+        (!name || name.length < 2 || name ==='')
            makeInvalid(txtName, 'Please enter First and Last name\n' +
-               'No numbers or special characters except hyphen (-)') :
-           makeValid(txtName)
+           'No numbers or special characters except hyphen (-)') :
+           makeValid(txtName);
 
        !emailPattern.test(emailAddress) ?
            makeInvalid(txtEmail, 'Please enter an email ending in .edu') :
@@ -60,14 +63,22 @@ $(document).ready(() => {
            makeInvalid(txtPhone, 'Please enter a valid phone number. ex (999)999.9999') :
            makeValid(txtPhone);
 
+        !/^[A-Za-z]$/.test(city) ?
+            makeInvalid(txtCity, 'Please enter a city.') :
+            makeValid(txtCity);
+
+        !/^[A-Z]$/.test(state) ?
+            makeInvalid(txtState, 'Please enter a state abbreviation.') :
+            makeValid(txtState);
+
        !zipPattern.test(zip) ?
-           makeInvalid(txtZip,'Please enter the zip code in the format 99999 or 99999-9999') :
+           makeInvalid(txtZip,'Please enter the zip code in the format 99999-9999.') :
            makeValid(txtZip);
 
-       if(!birthDatePattern.test(DoB)) {
-           makeInvalid(txtDateOfBirth, 'Please enter a date in the format MM/DD/YYYY');
-       } else if (Date.parse(DoB) > Date.now()) {
-           makeInvalid(txtDateOfBirth, 'Date must be a past date');
+       if(!datePattern.test(dateOfBirth)) {
+           makeInvalid(txtDateOfBirth, 'Please enter a date in the format MM/DD/YYYY.');
+       } else if (Date.parse(dateOfBirth) > Date.now()) {
+           makeInvalid(txtDateOfBirth, 'Date must be a past date.');
        } else {
            makeValid(txtDateOfBirth);
        }
@@ -75,4 +86,3 @@ $(document).ready(() => {
        txtName.select().focus();
     });
 });
-
